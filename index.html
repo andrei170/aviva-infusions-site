@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AVIVA Infusions | CRNA-Led Infusion Clinic | Green Bay, WI</title>
+  <meta property="og:title" content="AVIVA Infusions | CRNA-Led Infusion Clinic | Green Bay, WI">
+  <meta property="og:description" content="AVIVA Infusions is a CRNA-led clinic in Green Bay, Wisconsin offering ketamine therapy, IV vitamins, NAD+, hormone replacement, functional medicine, and aesthetics. Founded by Julie Podlasik, CRNA, APNP.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://andrei170.github.io/aviva-infusions-site/">
+  <meta property="og:image" content="https://avivainfusions.com/wp-content/uploads/2025/12/New-building-outdoor-from-vet-view-768x511.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://avivainfusions.com/wp-content/uploads/2025/12/New-building-outdoor-from-vet-view-768x511.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230f172a'/><text x='32' y='44' font-size='38' font-family='Georgia,serif' fill='%23ffffff' text-anchor='middle'>A</text></svg>">
+
 <meta name="description" content="AVIVA Infusions is a CRNA-led clinic in Green Bay, Wisconsin offering ketamine therapy, IV vitamins, NAD+, hormone replacement, functional medicine, and aesthetics. Founded by Julie Podlasik, CRNA, APNP.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +46,7 @@
     line-height: 1.65;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
 
@@ -114,32 +124,48 @@
   .nav-toggle svg { display: block; }
 
   /* ============================================================
-     HERO
+     HERO - cinematic ken-burns
   ============================================================ */
   .hero {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     background: var(--teal-950);
   }
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 65% 55% at 90% 30%, rgba(42, 107, 117, 0.35) 0%, transparent 70%),
-      radial-gradient(ellipse 50% 60% at 10% 80%, rgba(201, 162, 90, 0.10) 0%, transparent 65%),
-      linear-gradient(165deg, var(--teal-950) 0%, #0e3540 45%, #0c2a32 100%);
-  }
+  /* real photo layer - ken-burns only when motion ok */
   .hero-photo {
     position: absolute;
     inset: 0;
     background-image: url('https://avivainfusions.com/wp-content/uploads/2025/12/New-building-outdoor-from-vet-view-768x511.jpg');
     background-size: cover;
     background-position: center 40%;
-    opacity: 0.13;
-    mix-blend-mode: luminosity;
+    will-change: transform;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-photo {
+      animation: kenBurns 22s ease-in-out infinite alternate;
+    }
+  }
+  @keyframes kenBurns {
+    0%   { transform: scale(1.08) translate(0, 0); }
+    100% { transform: scale(1.0)  translate(-1.5%, 1%); }
+  }
+  /* cinematic scrim: dark gradient + teal tint overlay */
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        170deg,
+        rgba(8, 30, 37, 0.82) 0%,
+        rgba(8, 30, 37, 0.58) 45%,
+        rgba(12, 42, 50, 0.72) 100%
+      ),
+      radial-gradient(ellipse 65% 55% at 90% 30%, rgba(42, 107, 117, 0.28) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 10% 80%, rgba(201, 162, 90, 0.08) 0%, transparent 65%);
   }
   .hero-ornament {
     position: absolute;
@@ -311,6 +337,77 @@
     line-height: 1.75;
   }
   .bg-dark .section-lead { color: rgba(250, 246, 239, 0.80); }
+
+  /* ============================================================
+     FEATURE BAND - full bleed ~60vh
+  ============================================================ */
+  .feature-band {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height: 60vh;
+    min-height: 360px;
+    max-height: 640px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+  .feature-band img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .feature-band-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(8, 30, 37, 0.75) 0%,
+      rgba(8, 30, 37, 0.22) 55%,
+      rgba(8, 30, 37, 0.05) 100%
+    );
+  }
+  .feature-band-caption {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 32px 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .feature-band-caption p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+    font-style: italic;
+    color: var(--ivory);
+    line-height: 1.5;
+    max-width: 640px;
+    margin: 0;
+  }
+  .feature-band-caption .caption-tag {
+    font-size: 0.74rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-300);
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid rgba(201, 162, 90, 0.4);
+    padding: 6px 14px;
+    border-radius: 3px;
+  }
+  @media (max-width: 600px) {
+    .feature-band-caption { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+  }
 
   /* ============================================================
      FOUNDER / ABOUT
@@ -590,7 +687,7 @@
     display: block;
   }
 
-  /* Team members grid */
+  /* Team members grid - enlarged with lightbox trigger */
   .team-members-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -602,6 +699,8 @@
     overflow: hidden;
     border: 1px solid var(--line);
     background: var(--ivory-2);
+    cursor: pointer;
+    position: relative;
   }
   .team-member-card img {
     width: 100%;
@@ -609,7 +708,18 @@
     object-fit: cover;
     object-position: center top;
     display: block;
+    transition: transform 0.35s ease;
   }
+  .team-member-card:hover img { transform: scale(1.04); }
+  .team-member-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 30, 37, 0);
+    transition: background 0.25s;
+    pointer-events: none;
+  }
+  .team-member-card:hover::after { background: rgba(8, 30, 37, 0.18); }
   @media (max-width: 860px) {
     .team-members-grid { grid-template-columns: repeat(3, 1fr); }
   }
@@ -624,14 +734,18 @@
     overflow: hidden;
     border: 1px solid var(--line);
     margin-top: 18px;
+    cursor: pointer;
+    position: relative;
   }
   .iv-photo-band img {
     width: 100%;
-    height: 260px;
+    height: 340px;
     object-fit: cover;
     object-position: center 40%;
     display: block;
+    transition: transform 0.4s ease;
   }
+  .iv-photo-band:hover img { transform: scale(1.025); }
 
   /* ============================================================
      REVIEWS / SOCIAL PROOF
@@ -878,6 +992,90 @@
   .footer-demo a:hover { color: var(--gold-300); }
 
   /* ============================================================
+     LIGHTBOX
+  ============================================================ */
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(8, 30, 37, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+  }
+  .lightbox-overlay.open { display: flex; }
+  .lightbox-inner {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lightbox-img {
+    max-width: 88vw;
+    max-height: 88vh;
+    border-radius: 6px;
+    object-fit: contain;
+    display: block;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  }
+  .lightbox-close {
+    position: fixed;
+    top: 24px;
+    right: 28px;
+    background: none;
+    border: 1px solid rgba(201, 162, 90, 0.4);
+    color: var(--gold-300);
+    font-size: 1.4rem;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    z-index: 1001;
+  }
+  .lightbox-close:hover { background: rgba(201, 162, 90, 0.15); border-color: var(--gold-300); }
+  .lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 1px solid rgba(201, 162, 90, 0.35);
+    color: var(--gold-300);
+    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    z-index: 1001;
+    line-height: 1;
+  }
+  .lightbox-arrow:hover { background: rgba(201, 162, 90, 0.12); border-color: var(--gold-300); }
+  .lightbox-arrow.prev { left: 16px; }
+  .lightbox-arrow.next { right: 16px; }
+  .lightbox-counter {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    color: rgba(250, 246, 239, 0.5);
+    z-index: 1001;
+  }
+
+  /* ============================================================
      SCROLL REVEAL
   ============================================================ */
   @media (prefers-reduced-motion: no-preference) {
@@ -938,6 +1136,8 @@
     .hero-content { padding: 100px 0 60px; }
     .hero-trust { gap: 20px; }
     .trust-pill { font-size: 0.72rem; }
+    .lightbox-arrow.prev { left: 8px; }
+    .lightbox-arrow.next { right: 8px; }
   }
   @media (max-width: 560px) {
     .container { padding: 0 20px; }
@@ -954,6 +1154,17 @@
 </style>
 </head>
 <body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lightbox-inner">
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  </div>
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">&times;</button>
+  <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Previous photo">&#8592;</button>
+  <button class="lightbox-arrow next" id="lightboxNext" aria-label="Next photo">&#8594;</button>
+  <p class="lightbox-counter" id="lightboxCounter" aria-live="polite"></p>
+</div>
 
 <!-- STICKY HEADER -->
 <header class="site-header" id="siteHeader">
@@ -980,10 +1191,10 @@
 
 <main id="top">
 
-  <!-- HERO -->
+  <!-- HERO - cinematic ken-burns -->
   <section class="hero" aria-labelledby="heroHeading">
-    <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-photo" aria-hidden="true"></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
     <svg class="hero-ornament" viewBox="0 0 400 400" fill="none" aria-hidden="true">
       <circle cx="200" cy="200" r="198" stroke="white" stroke-width="1"/>
       <circle cx="200" cy="200" r="150" stroke="white" stroke-width="0.5"/>
@@ -1119,42 +1330,42 @@
           >
         </div>
         <div class="team-members-grid reveal">
-          <div class="team-member-card">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Kayla-Guns.jpg" data-alt="Kayla Guns, AVIVA Infusions clinical team member">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Kayla-Guns.jpg"
               alt="Kayla Guns, AVIVA Infusions clinical team member"
               loading="lazy"
             >
           </div>
-          <div class="team-member-card">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Amanda.jpg" data-alt="Amanda, AVIVA Infusions clinical team member">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Amanda.jpg"
               alt="Amanda, AVIVA Infusions clinical team member"
               loading="lazy"
             >
           </div>
-          <div class="team-member-card">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Jess-1.jpg" data-alt="Jess, AVIVA Infusions clinical team member">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Jess-1.jpg"
               alt="Jess, AVIVA Infusions clinical team member"
               loading="lazy"
             >
           </div>
-          <div class="team-member-card">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Brittany.jpg" data-alt="Brittany, AVIVA Infusions clinical team member">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Brittany.jpg"
               alt="Brittany, AVIVA Infusions clinical team member"
               loading="lazy"
             >
           </div>
-          <div class="team-member-card">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Rachel.jpg" data-alt="Rachel, AVIVA Infusions clinical team member">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Rachel.jpg"
               alt="Rachel, AVIVA Infusions clinical team member"
               loading="lazy"
             >
           </div>
-          <div class="team-member-card">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Kiki.jpg" data-alt="Kiki, AVIVA Infusions clinical team member">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Kiki.jpg"
               alt="Kiki, AVIVA Infusions clinical team member"
@@ -1295,13 +1506,16 @@
       <div class="service-note reveal">
         <strong>All services are by appointment.</strong> Call us at <a href="tel:+19208842277">(920) 884-2277</a> or book online to discuss which services are appropriate for your situation. AVIVA Infusions does not provide emergency medical care.
       </div>
-      <div class="iv-photo-band reveal">
+
+      <!-- IV photo - lightbox enabled, enlarged -->
+      <div class="iv-photo-band reveal" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2023/03/IV-Therapy-AVIVA-Infusions-Green-Bay-WI-IV-Therapy-Near-Me-section.jpg" data-alt="IV therapy in progress at AVIVA Infusions clinic in Green Bay, WI">
         <img
           src="https://avivainfusions.com/wp-content/uploads/2023/03/IV-Therapy-AVIVA-Infusions-Green-Bay-WI-IV-Therapy-Near-Me-section.jpg"
           alt="IV therapy in progress at AVIVA Infusions clinic in Green Bay, WI"
           loading="lazy"
         >
       </div>
+
       <div class="services-feature-photo reveal">
         <img
           src="https://avivainfusions.com/wp-content/uploads/2023/02/Aviva-Weight-Loss-0692-1024x683.jpg"
@@ -1313,6 +1527,20 @@
       </div>
     </div>
   </section>
+
+  <!-- FULL-BLEED FEATURE BAND -->
+  <div class="feature-band reveal" aria-label="AVIVA Infusions clinic building on Cardinal Lane">
+    <img
+      src="https://avivainfusions.com/wp-content/uploads/2025/12/New-building-outdoor-from-vet-view-768x511.jpg"
+      alt="AVIVA Infusions clinic at 645 Cardinal Lane, Green Bay, WI"
+      loading="lazy"
+    >
+    <div class="feature-band-scrim" aria-hidden="true"></div>
+    <div class="feature-band-caption">
+      <p>"The clinic was built to feel different from the first moment you arrive."</p>
+      <span class="caption-tag">645 Cardinal Lane &middot; Green Bay, WI</span>
+    </div>
+  </div>
 
   <!-- SOCIAL PROOF / REVIEWS - dark section -->
   <section id="reviews" class="bg-dark" aria-labelledby="reviewsHeading">
@@ -1350,7 +1578,7 @@
           <div class="stars" aria-label="5 out of 5 stars">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5l1.8 5.4H15l-4.6 3.3 1.8 5.4L8 12.4l-4.2 3.2 1.8-5.4L1 7h5.2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5l1.8 5.4H15l-4.6 3.3 1.8 5.4L8 12.4l-4.2 3.2 1.8-5.4L1 7h5.2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 16 16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5l1.8 5.4H15l-4.6 3.3 1.8 5.4L8 12.4l-4.2 3.2 1.8-5.4L1 7h5.2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5l1.8 5.4H15l-4.6 3.3 1.8 5.4L8 12.4l-4.2 3.2 1.8-5.4L1 7h5.2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5l1.8 5.4H15l-4.6 3.3 1.8 5.4L8 12.4l-4.2 3.2 1.8-5.4L1 7h5.2z"/></svg>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5l1.8 5.4H15l-4.6 3.3 1.8 5.4L8 12.4l-4.2 3.2 1.8-5.4L1 7h5.2z"/></svg>
           </div>
@@ -1562,7 +1790,6 @@
     var open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
   });
-  // Close nav on link click
   nav.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
       nav.classList.remove('open');
@@ -1584,6 +1811,75 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(function (el) { observer.observe(el); });
   }
+
+  // ----------------------------------------------------------------
+  // LIGHTBOX
+  // ----------------------------------------------------------------
+  var overlay   = document.getElementById('lightbox');
+  var lbImg     = document.getElementById('lightboxImg');
+  var lbClose   = document.getElementById('lightboxClose');
+  var lbPrev    = document.getElementById('lightboxPrev');
+  var lbNext    = document.getElementById('lightboxNext');
+  var lbCounter = document.getElementById('lightboxCounter');
+
+  // Collect all lightbox-enabled elements in DOM order
+  var lbItems = Array.from(document.querySelectorAll('[data-lightbox]'));
+  var currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    var item = lbItems[currentIndex];
+    lbImg.src = item.getAttribute('data-src');
+    lbImg.alt = item.getAttribute('data-alt') || '';
+    lbCounter.textContent = (currentIndex + 1) + ' / ' + lbItems.length;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + lbItems.length) % lbItems.length;
+    openLightbox(currentIndex);
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % lbItems.length;
+    openLightbox(currentIndex);
+  }
+
+  lbItems.forEach(function (el, idx) {
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', 'Open full size photo');
+    el.addEventListener('click', function () { openLightbox(idx); });
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(idx); }
+    });
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', showPrev);
+  lbNext.addEventListener('click', showNext);
+
+  // Click outside image closes lightbox
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) { closeLightbox(); }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function (e) {
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape') { closeLightbox(); }
+    if (e.key === 'ArrowLeft')  { showPrev(); }
+    if (e.key === 'ArrowRight') { showNext(); }
+  });
+
 }());
 </script>
 
