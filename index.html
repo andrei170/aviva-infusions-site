@@ -590,6 +590,49 @@
     display: block;
   }
 
+  /* Team members grid */
+  .team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .team-member-card {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--ivory-2);
+  }
+  .team-member-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  @media (max-width: 860px) {
+    .team-members-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .team-members-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* IV therapy photo band */
+  .iv-photo-band {
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    margin-top: 18px;
+  }
+  .iv-photo-band img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+  }
+
   /* ============================================================
      REVIEWS / SOCIAL PROOF
   ============================================================ */
@@ -1075,6 +1118,50 @@
             height="976"
           >
         </div>
+        <div class="team-members-grid reveal">
+          <div class="team-member-card">
+            <img
+              src="https://avivainfusions.com/wp-content/uploads/2025/10/Kayla-Guns.jpg"
+              alt="Kayla Guns, AVIVA Infusions clinical team member"
+              loading="lazy"
+            >
+          </div>
+          <div class="team-member-card">
+            <img
+              src="https://avivainfusions.com/wp-content/uploads/2025/10/Amanda.jpg"
+              alt="Amanda, AVIVA Infusions clinical team member"
+              loading="lazy"
+            >
+          </div>
+          <div class="team-member-card">
+            <img
+              src="https://avivainfusions.com/wp-content/uploads/2025/10/Jess-1.jpg"
+              alt="Jess, AVIVA Infusions clinical team member"
+              loading="lazy"
+            >
+          </div>
+          <div class="team-member-card">
+            <img
+              src="https://avivainfusions.com/wp-content/uploads/2025/10/Brittany.jpg"
+              alt="Brittany, AVIVA Infusions clinical team member"
+              loading="lazy"
+            >
+          </div>
+          <div class="team-member-card">
+            <img
+              src="https://avivainfusions.com/wp-content/uploads/2025/10/Rachel.jpg"
+              alt="Rachel, AVIVA Infusions clinical team member"
+              loading="lazy"
+            >
+          </div>
+          <div class="team-member-card">
+            <img
+              src="https://avivainfusions.com/wp-content/uploads/2025/10/Kiki.jpg"
+              alt="Kiki, AVIVA Infusions clinical team member"
+              loading="lazy"
+            >
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1207,6 +1294,13 @@
       </div>
       <div class="service-note reveal">
         <strong>All services are by appointment.</strong> Call us at <a href="tel:+19208842277">(920) 884-2277</a> or book online to discuss which services are appropriate for your situation. AVIVA Infusions does not provide emergency medical care.
+      </div>
+      <div class="iv-photo-band reveal">
+        <img
+          src="https://avivainfusions.com/wp-content/uploads/2023/03/IV-Therapy-AVIVA-Infusions-Green-Bay-WI-IV-Therapy-Near-Me-section.jpg"
+          alt="IV therapy in progress at AVIVA Infusions clinic in Green Bay, WI"
+          loading="lazy"
+        >
       </div>
       <div class="services-feature-photo reveal">
         <img
