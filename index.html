@@ -720,6 +720,26 @@
     pointer-events: none;
   }
   .team-member-card:hover::after { background: rgba(8, 30, 37, 0.18); }
+  .team-member-caption {
+    padding: 10px 12px 12px;
+    background: var(--ivory-2);
+    border-top: 1px solid var(--line);
+  }
+  .team-member-caption .tm-name {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--teal-900);
+    line-height: 1.3;
+  }
+  .team-member-caption .tm-role {
+    display: block;
+    font-size: 0.76rem;
+    color: var(--gold-600);
+    letter-spacing: 0.4px;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
   @media (max-width: 860px) {
     .team-members-grid { grid-template-columns: repeat(3, 1fr); }
   }
@@ -1330,47 +1350,71 @@
           >
         </div>
         <div class="team-members-grid reveal">
-          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Kayla-Guns.jpg" data-alt="Kayla Guns, AVIVA Infusions clinical team member">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Kayla-Guns.jpg" data-alt="Kayla Guns, FNP, APNP - Family Nurse Practitioner at AVIVA Infusions">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Kayla-Guns.jpg"
-              alt="Kayla Guns, AVIVA Infusions clinical team member"
+              alt="Kayla Guns, FNP, APNP - Family Nurse Practitioner at AVIVA Infusions"
               loading="lazy"
             >
+            <div class="team-member-caption">
+              <span class="tm-name">Kayla Guns, FNP, APNP</span>
+              <span class="tm-role">Family Nurse Practitioner</span>
+            </div>
           </div>
-          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Amanda.jpg" data-alt="Amanda, AVIVA Infusions clinical team member">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Amanda.jpg" data-alt="Amanda - Clinic Manager at AVIVA Infusions">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Amanda.jpg"
-              alt="Amanda, AVIVA Infusions clinical team member"
+              alt="Amanda - Clinic Manager at AVIVA Infusions"
               loading="lazy"
             >
+            <div class="team-member-caption">
+              <span class="tm-name">Amanda</span>
+              <span class="tm-role">Clinic Manager</span>
+            </div>
           </div>
-          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Jess-1.jpg" data-alt="Jess, AVIVA Infusions clinical team member">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Jess-1.jpg" data-alt="Jess - Registered Nurse at AVIVA Infusions">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Jess-1.jpg"
-              alt="Jess, AVIVA Infusions clinical team member"
+              alt="Jess - Registered Nurse at AVIVA Infusions"
               loading="lazy"
             >
+            <div class="team-member-caption">
+              <span class="tm-name">Jess</span>
+              <span class="tm-role">Registered Nurse</span>
+            </div>
           </div>
-          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Brittany.jpg" data-alt="Brittany, AVIVA Infusions clinical team member">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Brittany.jpg" data-alt="Brittany - Registered Nurse at AVIVA Infusions">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Brittany.jpg"
-              alt="Brittany, AVIVA Infusions clinical team member"
+              alt="Brittany - Registered Nurse at AVIVA Infusions"
               loading="lazy"
             >
+            <div class="team-member-caption">
+              <span class="tm-name">Brittany</span>
+              <span class="tm-role">Registered Nurse</span>
+            </div>
           </div>
-          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Rachel.jpg" data-alt="Rachel, AVIVA Infusions clinical team member">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Rachel.jpg" data-alt="Rachel - Registered Nurse at AVIVA Infusions">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Rachel.jpg"
-              alt="Rachel, AVIVA Infusions clinical team member"
+              alt="Rachel - Registered Nurse at AVIVA Infusions"
               loading="lazy"
             >
+            <div class="team-member-caption">
+              <span class="tm-name">Rachel</span>
+              <span class="tm-role">Registered Nurse</span>
+            </div>
           </div>
-          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Kiki.jpg" data-alt="Kiki, AVIVA Infusions clinical team member">
+          <div class="team-member-card" data-lightbox data-src="https://avivainfusions.com/wp-content/uploads/2025/10/Kiki.jpg" data-alt="Kiki - Care Team at AVIVA Infusions">
             <img
               src="https://avivainfusions.com/wp-content/uploads/2025/10/Kiki.jpg"
-              alt="Kiki, AVIVA Infusions clinical team member"
+              alt="Kiki - Care Team at AVIVA Infusions"
               loading="lazy"
             >
+            <div class="team-member-caption">
+              <span class="tm-name">Kiki</span>
+              <span class="tm-role">Care Team</span>
+            </div>
           </div>
         </div>
       </div>
